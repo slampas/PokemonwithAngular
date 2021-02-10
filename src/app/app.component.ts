@@ -12,12 +12,12 @@ import { POKEMONS } from './mock-pokemons';
 export class AppComponent implements OnInit {
 
   title = 'la variable Title : PokemonAngular';
-  private pokemons: Pokemon[] | undefined;
-  public value: String = "";
+  public pokemons: Pokemon[] | undefined;
+  public value: String = '';
+  values: String='';
+  age=10;
 
-  public getValue() {
-    return this.value;
-  }
+
 
   ngOnInit(): void {
     this.pokemons = POKEMONS;
@@ -29,13 +29,5 @@ export class AppComponent implements OnInit {
     alert("Vous avez cliqué sur: " + pokemon.name);
   }
 
-  onClick() {
-    console.log("clic numéro");
-  }
-
-  onKey(event: any) {
-   this.value = "Bonjour Monsieur: " +event.target.value;
-
-  }
 
 }

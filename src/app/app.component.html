@@ -1,31 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <p>affcihage d'une variable : {{title}}</p>
-
-  <p>Liste des pokémons</p>
-  <ul>
-    <li>Bulbizzare</li>
-    <li>Salamèche</li>
-    <li>Carapuce</li>
-
-  </ul>
-
-  <button (click)="onClick()">il faut Cliquer</button>
-  <br>
-
-  <input (keyup)="onKey($event)">
-  <p>{{value}}</p>
-
-</body>
-
-</html>
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+<div class="row">
+<div *ngFor='let pokemon of pokemons' class="col s6 m4">
+  <div class="card horizontal" (click)="selectPokemon(pokemon)">
+    <div class="card-image">
+      <img [src]="pokemon.picture">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{ pokemon.name }}</p>
+        <p><small>{{ pokemon.created }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
